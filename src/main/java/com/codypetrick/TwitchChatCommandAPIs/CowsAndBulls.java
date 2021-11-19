@@ -37,6 +37,8 @@ public class CowsAndBulls {
          secondNum = (number / 10);
          thirdNum = (number % 10);
 
+         return false;
+
 
     }
 }
