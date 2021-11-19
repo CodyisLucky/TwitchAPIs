@@ -1,8 +1,6 @@
 package com.codypetrick.TwitchChatCommandAPIs;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -15,6 +13,7 @@ Otherwise, outputs a random love percentage between the user and a given target
 public class etainLove {
 
     @GetMapping("Twitch/etainLoveCommand/{user}/{target}")
+    @ResponseBody
     public String loveResponse(@PathVariable("user") String user, @PathVariable("target") String target){
         Random random = new Random();
         int messageChance = (random.nextInt(100) + 1); //random number for the secret message
