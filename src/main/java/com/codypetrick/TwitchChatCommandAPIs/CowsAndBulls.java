@@ -35,7 +35,7 @@ public class CowsAndBulls {
             number = number = (firstNum * 100);
         }
          secondNum = (number / 10);
-         thirdNum = 
+         thirdNum = (number % 10);
 
 
     }
