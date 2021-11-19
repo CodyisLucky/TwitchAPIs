@@ -13,7 +13,7 @@ public class TwitchChatCommandApIsApplication {
 	@RequestMapping("/")
 	@ResponseBody
 	String home() {
-		return "Hello World!";
+		return "Welcome to Cody's APIs";
 	}
 
 	public static void main(String[] args) {
