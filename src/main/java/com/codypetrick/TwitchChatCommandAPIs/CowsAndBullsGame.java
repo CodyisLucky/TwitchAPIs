@@ -70,6 +70,14 @@ public class CowsAndBullsGame {
         return ("No game found for this channel.");
     }
 
+    @GetMapping("Twitch/Cody/CowsAndBulls/Rules")
+    @ResponseBody
+    public String rules(){
+        return ("The goal of the game is to guess the 3 digit number in as few attempts as possible." +
+                " If you guess a correct number in the wrong place, you get a cow. If you guess the correct number and place " +
+                "you get a bull.");
+    }
+
     //Validates that the guess is a valid numeric value, returns -1 if it is not.
     public static int toInt(String strNum){
         if (strNum == null) {

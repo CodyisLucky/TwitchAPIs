@@ -59,7 +59,7 @@ public class CowsAndBulls {
             return ("Congratulations you guessed the number! It took you all " + guesses + " guesses.");
         }
         else{
-            return ("Your guess of " + originalNumber + " gave you " + cows + " cows and " + bulls + " bulls. The Number is " + chosenNum[0] + chosenNum[1] + chosenNum[2]);
+            return ("Your guess of " + originalNumber + " gave you " + cows + " cows and " + bulls + " bulls.");
         }
 
     }
