@@ -6,24 +6,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import java.util.Hashtable;
 
 @RestController
 public class CowsAndBullsGame {
 
-    ArrayList<CowsAndBulls> games = new ArrayList<>();
+    Hashtable games = new Hashtable();
 
     @GetMapping("Twitch/Cody/CowsAndBulls/InitializeNewGame/{channel}")
     @ResponseBody
     public String initializeGame(@PathVariable("channel") String channel){
         for(int i = 0; i < games.size(); i++){
-            if(games.get(i).getChannel().equals(channel)){
+            if(games.containsKey(channel)){
                 return ("A game already exists for this channel");
             }
         }
 
-        CowsAndBulls newGame = new CowsAndBulls(channel);
-        games.add(newGame);
+        games.put(channel, new CowsAndBulls());
+        CowsAndBulls game = (CowsAndBulls) games.get(channel);
 
         return ("The game has begun!");
 
@@ -44,16 +44,15 @@ public class CowsAndBullsGame {
         if(guess > 999 || guess < 0){
             return "Invalid guess. Must be a positive number less than 1000.";
         }
-        for(int i = 0; i < games.size(); i++){
-            if(games.get(i).getChannel().equals(channel)){
-                CowsAndBulls channelGame = games.get(i);
+            if(games.containsKey(channel)){
+                CowsAndBulls channelGame = (CowsAndBulls) games.get(channel);
                 response = channelGame.guess(guess);
                 if(!channelGame.isActiveGame()){
-                    games.remove(i);
+                    games.remove(channel);
                     return response;
                 }
             }
-        }
+
 
         return response;
     }
@@ -61,11 +60,9 @@ public class CowsAndBullsGame {
     @GetMapping("Twitch/Cody/CowsAndBulls/ForceEnd/{channel}")
     @ResponseBody
     public String forceEnd(@PathVariable("channel") String channel){
-        for(int i = 0; i < games.size(); i++){
-            if(games.get(i).getChannel().equals(channel)){
-                games.remove(i);
-                return("The game has ended.");
-            }
+        if(games.containsKey(channel)){
+            games.remove(channel);
+            return("The game has ended.");
         }
         return ("No game found for this channel.");
     }
