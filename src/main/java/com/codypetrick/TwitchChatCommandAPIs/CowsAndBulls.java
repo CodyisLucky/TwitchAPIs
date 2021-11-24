@@ -1,27 +1,18 @@
 package com.codypetrick.TwitchChatCommandAPIs;
 
-/*
-To Do List:
-For Guess make sure incoming int is less than 1000 and positive
-Figure out if a linked list will work for multiple channels or if a SQL server is needed
-if SQL server is needed, figure out how to implement that on Heroku
- */
-
 import java.util.Random;
 
 public class CowsAndBulls {
 
     private boolean isActiveGame = false;
     private int[] chosenNum = new int[3];
-    private String channel;
     private int guesses;
 
-    public CowsAndBulls(String channel) {
+    public CowsAndBulls() {
         Random random = new Random();
         this.chosenNum[0] = (random.nextInt(10));
         this.chosenNum[1] = (random.nextInt(10));
         this.chosenNum[2] = (random.nextInt(10));
-        this.channel = channel;
         this.isActiveGame = true;
         this.guesses = 0;
     }
@@ -68,7 +59,4 @@ public class CowsAndBulls {
         return isActiveGame;
     }
 
-    public String getChannel() {
-        return channel;
-    }
 }
