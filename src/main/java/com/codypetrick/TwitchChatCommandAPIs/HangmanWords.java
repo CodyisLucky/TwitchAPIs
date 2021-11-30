@@ -12,27 +12,32 @@ public class HangmanWords {
     static List<String> wordList = new ArrayList<String>();
     static int listSize = 10;
 
-    private void populateWordList() throws IOException{
+    public static void populateWordList() throws IOException{
 
         String currWord = "";
-        Scanner inFile = new Scanner(new File("HangmanWordList.txt")).useDelimiter("\r\n");
+        File inFile = new File(("C:\\Users\\Cody\\Documents\\Code\\APIs\\TwitchAPIs\\src\\main\\resources\\HangmanWordList.txt"));
+        //return ("Attempting to read from file in: "+inFile.getCanonicalPath());
+        Scanner scanFile = new Scanner(inFile);//.useDelimiter("\r\n");
+
 
         wordList.clear();
 
-        while (inFile.hasNext()){
-            currWord = inFile.next();
+        while (scanFile.hasNext()){
+            currWord = scanFile.next();
             wordList.add(currWord);
             listSize++;
         }
 
-        inFile.close();
+        scanFile.close();
+
+        //return wordList.get(1);
     }
 
-    public static String getWord(){
+    public static String getWord() throws IOException{
         Random random = new Random();
         int wordNum = random.nextInt(listSize);
         if(wordList.isEmpty()){
-            return "Nowords";
+            populateWordList();
         }
         return wordList.get(wordNum);
     }

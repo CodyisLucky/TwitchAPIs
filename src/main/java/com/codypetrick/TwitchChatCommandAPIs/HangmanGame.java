@@ -1,10 +1,8 @@
 package com.codypetrick.TwitchChatCommandAPIs;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -15,7 +13,7 @@ public class HangmanGame {
 
     @GetMapping("Twitch/Cody/Hangman/InitializeNewGame/{channel}")
     @ResponseBody
-    public String initializeGame(@PathVariable("channel") String channel){
+    public String initializeGame(@PathVariable("channel") String channel) throws IOException{
         for(int i = 0; i < games.size(); i++){
             if(games.containsKey(channel)){
                 return ("A game already exists for this channel");
@@ -83,6 +81,12 @@ public class HangmanGame {
     @ResponseBody
     public String rules(){
         return ("The goal of the game is to guess the correct word in as few attempts as possible.");
+    }
+
+    @GetMapping("Twitch/Cody/Hangman/UpdateWordList")
+    public String updateWordList() throws IOException {
+        HangmanWords.populateWordList();
+        return "Word list updated.";
     }
 
     //Returns the String guess as a Character ArrayList.

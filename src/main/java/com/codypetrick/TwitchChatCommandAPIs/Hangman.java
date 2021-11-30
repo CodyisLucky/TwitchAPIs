@@ -1,6 +1,7 @@
 package com.codypetrick.TwitchChatCommandAPIs;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,13 +15,13 @@ public class Hangman {
     private int wordSize = 0;
     private int correctGuesses = 0;
 
-    public Hangman(){
+    public Hangman() throws IOException{
         this.isActiveGame = true;
         this.guessesRemaining = 6;
         wordForGame();
     }
 
-    public void wordForGame(){
+    public void wordForGame() throws IOException {
         Random random = new Random();
         String tempWord = HangmanWords.getWord();
 
@@ -68,8 +69,8 @@ public class Hangman {
             return ("Sorry, you did not guess the word in time. The word was " + stringOfGuesses() + ".");
         }
         else{
-            return ("You have " + guessesRemaining + " wrong guesses remaining. Currently guessed word is: " + stringOfGuesses() +
-                    " -- Guessed letters: " + stringOfGuessedLetters());
+            return ("You have " + guessesRemaining + " wrong guesses remaining and " + (wordSize - correctGuesses) + " letters remaining. " +
+                    "Currently guessed word is: " + stringOfGuesses() + " -- Guessed letters: " + stringOfGuessedLetters());
         }
 
     }
