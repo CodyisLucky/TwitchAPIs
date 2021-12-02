@@ -89,6 +89,12 @@ public class HangmanGame {
 //        return "Word list updated.";
 //    }
 
+    @GetMapping("Twitch/Cody/Hangman/WorkingDir")
+    @ResponseBody
+    public String workingDir(){
+        return ("Working Directory = " + System.getProperty("user.dir"));
+    }
+
     //Returns the String guess as a Character ArrayList.
     private static ArrayList<Character> toCharArray(String guessWord){
         ArrayList<Character> guessChars = new ArrayList<Character>();
