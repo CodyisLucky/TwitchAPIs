@@ -83,11 +83,11 @@ public class HangmanGame {
         return ("The goal of the game is to guess the correct word in as few attempts as possible.");
     }
 
-    @GetMapping("Twitch/Cody/Hangman/UpdateWordList")
-    public String updateWordList() throws IOException {
-        HangmanWords.populateWordList();
-        return "Word list updated.";
-    }
+//    @GetMapping("Twitch/Cody/Hangman/UpdateWordList")
+//    public String updateWordList() throws IOException {
+//        HangmanWords.populateWordList();
+//        return "Word list updated.";
+//    }
 
     //Returns the String guess as a Character ArrayList.
     private static ArrayList<Character> toCharArray(String guessWord){

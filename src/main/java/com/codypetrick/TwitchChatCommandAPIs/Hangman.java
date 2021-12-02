@@ -23,7 +23,8 @@ public class Hangman {
 
     public void wordForGame() throws IOException {
         Random random = new Random();
-        String tempWord = HangmanWords.getWord();
+        HangmanWords wordTemp = new HangmanWords();
+        String tempWord = wordTemp.getWord();
 
         for (char c : tempWord.toCharArray()){
             c = Character.toUpperCase(c);

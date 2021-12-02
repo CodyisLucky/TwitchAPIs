@@ -2,6 +2,7 @@ package com.codypetrick.TwitchChatCommandAPIs;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,10 +13,11 @@ public class HangmanWords {
     static List<String> wordList = new ArrayList<String>();
     static int listSize = 10;
 
-    public static void populateWordList() throws IOException{
+    public void populateWordList() throws IOException{
 
         String currWord = "";
-        File inFile = new File(("C:\\Users\\Cody\\Documents\\Code\\APIs\\TwitchAPIs\\src\\main\\resources\\HangmanWordList.txt"));
+        URL url = getClass().getResource("com/codypetrick/TwitchChatCommandAPIs/HangmanWordList.txt");
+        File inFile = new File(url.getPath());
         //return ("Attempting to read from file in: "+inFile.getCanonicalPath());
         Scanner scanFile = new Scanner(inFile);//.useDelimiter("\r\n");
 
@@ -33,7 +35,7 @@ public class HangmanWords {
         //return wordList.get(1);
     }
 
-    public static String getWord() throws IOException{
+    public  String getWord() throws IOException{
         Random random = new Random();
         int wordNum = random.nextInt(listSize);
         if(wordList.isEmpty()){
