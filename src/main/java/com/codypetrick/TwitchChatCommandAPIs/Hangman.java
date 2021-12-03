@@ -12,6 +12,7 @@ public class Hangman {
     private ArrayList<Character> word = new ArrayList<Character>();
     private ArrayList<Character> guesses = new ArrayList<Character>();
     private ArrayList<Character> guessedLetters = new ArrayList<Character>();
+    private String actualWord = "";
     private int wordSize = 0;
     private int correctGuesses = 0;
 
@@ -24,9 +25,9 @@ public class Hangman {
     public void wordForGame() throws IOException {
         Random random = new Random();
         HangmanWords wordTemp = new HangmanWords();
-        String tempWord = wordTemp.getWord();
+        actualWord = wordTemp.getWord();
 
-        for (char c : tempWord.toCharArray()){
+        for (char c : actualWord.toCharArray()){
             c = Character.toUpperCase(c);
             word.add(c);
         }
@@ -67,7 +68,7 @@ public class Hangman {
         }
         else if (guessesRemaining == 0){
             this.isActiveGame = false;
-            return ("Sorry, you did not guess the word in time. The word was " + stringOfGuesses() + ".");
+            return ("Sorry, you did not guess the word in time. The word was " + actualWord + ".");
         }
         else{
             return ("You have " + guessesRemaining + " wrong guesses remaining and " + (wordSize - correctGuesses) + " letters remaining. " +
