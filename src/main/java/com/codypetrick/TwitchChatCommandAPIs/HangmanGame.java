@@ -85,8 +85,9 @@ public class HangmanGame {
 
 //    @GetMapping("Twitch/Cody/Hangman/UpdateWordList")
 //    public String updateWordList() throws IOException {
-//        HangmanWords.populateWordList();
-//        return "Word list updated.";
+//        generateWordListLocal temp = new generateWordListLocal();
+//        String code = temp.printCode();
+//        return code;
 //    }
 
     @GetMapping("Twitch/Cody/Hangman/WorkingDir")
