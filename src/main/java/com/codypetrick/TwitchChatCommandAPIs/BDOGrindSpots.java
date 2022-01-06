@@ -32,7 +32,7 @@ public class BDOGrindSpots {
         }
 
         if (offhand){
-            if (ap > 261 && ap < 273){
+            if (ap >= 261 && ap < 273){
                 ap -= 12;
             }
             else {
