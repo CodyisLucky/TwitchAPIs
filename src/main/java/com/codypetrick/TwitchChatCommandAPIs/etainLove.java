@@ -24,7 +24,7 @@ public class etainLove {
         }
         else{
             int lovePercent = (random.nextInt(100) + 1);
-            return (user + " is " + lovePercent + "% in love with " + target + " etainOhMy");
+            return (user + " is " + lovePercent + "% in love with " + target + " etainKISS etainKISS2");
         }
 
     }
