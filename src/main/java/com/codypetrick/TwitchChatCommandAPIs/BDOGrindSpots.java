@@ -48,23 +48,26 @@ public class BDOGrindSpots {
 
 
 
-            if(ap >= 301){
-                returnString = returnString + "Congrats, you beat the game, you can grind everywhere, even Crypt of Resting Thoughts.";
+            if (ap >= 310){
+                returnString = returnString + "Elvia Quint Hill. 400 DP suggested.";
+            }
+            else if(ap >= 301 && ap < 310){
+                returnString = returnString + "Elvia Hexe Sanctuary, Gyfin Rhasia Underground, or Crypt of Resting Thoughts.  390 DP suggested.";
             }
             else if(ap >= 289 && ap < 301){
-                returnString = returnString + "Olun's Valley (3p) or Ash Forest. 359 DP suggested.";
+                returnString = returnString + "Elvia Primal Giant Post, or Olun's Valley (3p) or Ash Forest. 359 DP suggested.";
             }
             else if(ap >= 281 && ap < 289){
-                returnString = returnString + "Hadum Orc Camp. 347 DP suggested.";
+                returnString = returnString + "Winter Tree Fossil, Jade Starlight Forest, Murrowak's Labyrinth, Elvia Orc Camp, or Elvia Rhutum Outstation. 347 DP suggested.";
             }
             else if(ap >= 269 && ap < 281){
-                returnString = returnString + "Sycraia Abyssal Ruins, Abandoned Monastery (2p), Hadum Bloody Monastery, Hadum Castle Ruins (2p), or Turos (2p). 329 DP suggested.";
+                returnString = returnString + "Elvia Saunil Camp, Sycraia Abyssal Ruins, Abandoned Monastery (2p), Elvia Bloody Monastery, Elvia Castle Ruins (2p), or Turos (2p). 329 DP suggested.";
             }
             else if(ap >= 265 && ap < 269){
-                returnString = returnString + "Padix Island (2p), Gyfin Rhasia Temple (5p), or Hadum Swamp Nagas/Fogans. 322 DP suggested.";
+                returnString = returnString + "Padix Island (2p), Gyfin Rhasia Temple (5p), or Elvia Swamp Nagas/Fogans. 322 DP suggested.";
             }
             else if(ap >= 261 && ap < 265){
-                returnString = returnString + "Star's End, Thornwood Forest, Hadum Biraghi Den, Hadum Altar Imps (2p). 315 DP suggested.";
+                returnString = returnString + "Star's End, Thornwood Forest, Elvia Biraghi Den, Elvia Altar Imps (2p). 315 DP suggested.";
             }
             else if(ap >= 253 && ap < 261){
                 returnString = returnString + "Hystria Ruins or Kratuga Ancient Ruins. 308 DP suggested.";
@@ -86,67 +89,88 @@ public class BDOGrindSpots {
             String lettersOnly = stringInput.replaceAll("[0-9]", "");
 
             if(lettersOnly.toLowerCase().contains("Mirumok".toLowerCase()) || lettersOnly.toLowerCase().contains("Trees".toLowerCase())){
-                returnString = "Mirumok Ruins has a recommended AP of 235 AP and 284 DP.";
+                returnString = "Mirumok Ruins is recommended at 235 AP and 284 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Bloody Monastery".toLowerCase()) || lettersOnly.toLowerCase().equalsIgnoreCase("BM")){
-                returnString = "Elvia Bloody Monastery has a recommended AP of 269 AP and 329 DP.";
+                returnString = "Elvia Bloody Monastery is recommended at 269 AP and 329 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Hystria".toLowerCase())){
-                returnString = "Hystria Ruins has a recommended AP of 253 AP and 308 DP.";
+                returnString = "Hystria Ruins is recommended at 253 AP and 308 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Aakman".toLowerCase())){
-                returnString = "Aakman Temple has a recommended AP of 245 AP and 301 DP.";
+                returnString = "Aakman Temple is recommended at 245 AP and 301 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Imps".toLowerCase())){
-                returnString = "Elvia Altar Imps has a recommended AP of 261 AP and 315 DP.";
+                returnString = "Elvia Altar Imps is recommended at 261 AP and 315 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Kratuga".toLowerCase())){
-                returnString = "Kratuga Ancient Ruins has a recommended AP of 253 AP and 308 DP.";
+                returnString = "Kratuga Ancient Ruins is recommended at 253 AP and 308 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Biraghi".toLowerCase())){
-                returnString = "Elvia Biraghi Den has a recommended AP of 261 AP and 315 DP.";
+                returnString = "Elvia Biraghi Den is recommended at 261 AP and 315 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Thornwood".toLowerCase()) || lettersOnly.toLowerCase().equalsIgnoreCase("TW")){
-                returnString = "Thornwood Forest has a recommended AP of 261 AP and 315 DP.";
+                returnString = "Thornwood Forest is recommended at 261 AP and 315 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Stars".toLowerCase()) || lettersOnly.toLowerCase().equalsIgnoreCase("SE")){
-                returnString = "Star's End has a recommended AP of 261 AP and 315 DP.";
+                returnString = "Star's End is recommended at 261 AP and 315 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Fogan".toLowerCase())){
-                returnString = "Elvia Swamp Fogans has a recommended AP of 265 AP and 322 DP.";
+                returnString = "Elvia Swamp Fogans is recommended at 265 AP and 322 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Naga".toLowerCase())){
-                returnString = "Elvia Swamp Nagas has a recommended AP of 265 AP and 322 DP.";
+                returnString = "Elvia Swamp Nagas is recommended at 265 AP and 322 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Gyfin".toLowerCase())){
-                returnString = "Gyfin Rhasia Temple has a recommended AP of 269 AP and 329 DP.";
+                returnString = "Gyfin Rhasia Temple is recommended at 269 AP and 329 DP. Gyfin Rhasia Underground is recommended at 301 AP an 380 DP";
             }
             else if(lettersOnly.toLowerCase().contains("Padix".toLowerCase())){
-                returnString = "Padix Island has a recommended AP of 265 AP and 322 DP.";
+                returnString = "Padix Island is recommended at 265 AP and 322 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Turo".toLowerCase())){
-                returnString = "Tunkata has a recommended AP of 269 AP and 329 DP.";
+                returnString = "Tunkata is recommended at 269 AP and 329 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Castle Ruins".toLowerCase()) || lettersOnly.toLowerCase().equalsIgnoreCase("CR")){
-                returnString = "Elvia Castle Ruins has a recommended AP of 269 AP and 329 DP.";
+                returnString = "Elvia Castle Ruins is recommended at 269 AP and 329 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Abandoned Monastery".toLowerCase()) || lettersOnly.toLowerCase().equalsIgnoreCase("AM")){
-                returnString = "Abandoned Monastery has a recommended AP of 269 AP and 329 DP.";
+                returnString = "Abandoned Monastery is recommended at 269 AP and 329 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Sycraia".toLowerCase()) || lettersOnly.toLowerCase().contains("Underwater".toLowerCase()) || lettersOnly.toLowerCase().equalsIgnoreCase("UW")){
-                returnString = "Sycraia Abyssal Ruins has a recommended AP of 269 AP and 329 DP.";
+                returnString = "Sycraia Abyssal Ruins is recommended at 269 AP and 329 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Orc".toLowerCase())){
-                returnString = "Elvia Orc Camp has a recommended AP of 281 AP and 347 DP.";
+                returnString = "Elvia Orc Camp is recommended at 281 AP and 347 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Olun".toLowerCase())){
-                returnString = "Olun's Valley has a recommended AP of 289 AP and 359 DP.";
+                returnString = "Olun's Valley is recommended at 289 AP and 359 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Ash".toLowerCase())){
-                returnString = "Ash Forest has a recommended AP of 289 AP and 359 DP.";
+                returnString = "Ash Forest is recommended at 289 AP and 359 DP.";
             }
             else if(lettersOnly.toLowerCase().contains("Crypt".toLowerCase())){
-                returnString = "Crypt of Resting Thoughts has a recommended AP of 301 AP and 401 DP.";
+                returnString = "Crypt of Resting Thoughts is recommended at 301 AP and 401 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Hexe".toLowerCase())){
+                returnString = "Elvia Hexe Sanctuary is recommended at 301 AP and 390 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Quint".toLowerCase())){
+                returnString = "Elvia Quint Hill is recommended at 310 AP and 401 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Giant".toLowerCase())){
+                returnString = "Elvia Primal Giant Post is recommended at 290 AP and 380 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Saunil".toLowerCase())){
+                returnString = "Elvia Saunil Camp is recommended at 270 AP and 330 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Winter".toLowerCase())){
+                returnString = "Winter Tree Fossil is recommended at 280 AP and 350 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Jade".toLowerCase())){
+                returnString = "Jade Starlight Forest is recommended at 280 AP and 350 DP.";
+            }
+            else if(lettersOnly.toLowerCase().contains("Murrowak".toLowerCase())){
+                returnString = "Murrowak's Labyrinth is recommended at 280 AP and 350 DP.";
             }
             else {
                 returnString = "Please enter a valid location or AP";
