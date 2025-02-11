@@ -20,7 +20,7 @@ public class etainLove {
         int percentChance = 5; //percent chance out of 100 of the secret message occurring
 
         if (user.equalsIgnoreCase("CodyisLucky")) {
-            return ("CodyisLucky is 110% in love with " + target + "etainKISS");            
+            return ("CodyisLucky is 110% in love with " + target + " etainKISS");            
         }
         else if(messageChance <= percentChance){
             return ("!zz You thought you were in love with " + target + " but no, it was me, Cody!");
