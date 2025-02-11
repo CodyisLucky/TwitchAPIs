@@ -19,12 +19,15 @@ public class etainLove {
         int messageChance = (random.nextInt(100) + 1); //random number for the secret message
         int percentChance = 5; //percent chance out of 100 of the secret message occurring
 
-        if(messageChance <= percentChance){
+        if (user.equalsIgnoreCase("CodyisLucky")) {
+            return ("CodyisLucky is 110% in love with " + target + "etainKISS");            
+        }
+        else if(messageChance <= percentChance){
             return ("!zz You thought you were in love with " + target + " but no, it was me, Cody!");
         }
         else{
             int lovePercent = (random.nextInt(100) + 1);
-            return (user + " is " + lovePercent + "% in love with " + target + " etainKISS etainKISS2");
+            return (user + " is " + lovePercent + "% in love with " + target + " etainKISS");
         }
 
     }
